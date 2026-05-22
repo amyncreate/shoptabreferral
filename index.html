@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- SEO -->
+  <title>ShopTab - Download Marketing Resources</title>
+  <meta name="description" content="Access all ShopTab marketing materials instantly. Download flyers, promo videos, APKs, and referral documents in one place." />
+  <meta name="theme-color" content="#6c63ff" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ShopTab Referral Hub" />
+  <meta property="og:description" content="Premium marketing resources for ShopTab affiliates." />
+  <meta property="og:type" content="website" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+
+  <!-- Favicon (inline SVG as data URI) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- Preconnect fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+
+<body>
+
+<!-- ══════════════════════════════
+     OFFLINE BANNER
+══════════════════════════════ -->
+<!-- <div id="offline-banner">
+  📡 You're offline  some resources may not load. Cached content is still available.
+</div> -->
+
+<!-- ══════════════════════════════
+     LOADING SCREEN
+══════════════════════════════ -->
+<div id="loading-screen" role="status" aria-label="Loading resources">
+  <div class="loader-logo">ShopTab Referral</div>
+  <div class="loader-bar-track">
+    <div class="loader-bar-fill"></div>
+  </div>
+  <div class="loader-dots">
+    <span></span><span></span><span></span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     BACKGROUND ORBS
+══════════════════════════════ -->
+<div class="bg-orbs" aria-hidden="true">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+
+<!-- ══════════════════════════════
+     NAVIGATION
+══════════════════════════════ -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+
+    <!-- Logo -->
+    <a href="#" class="nav-logo" aria-label="Referral Hub Home">
+      Referral <span>Hub</span>
+    </a>
+
+    <!-- Right controls -->
+    <div class="nav-right">
+
+      <!-- Theme toggle -->
+      <button
+        id="theme-toggle"
+        class="btn-theme-toggle"
+        aria-label="Toggle dark/light mode"
+        title="Toggle theme"
+      >☀️</button>
+
+      <!-- Download All -->
+      <button
+        id="btn-download-all"
+        class="btn-download-all"
+        aria-label="Download all resources"
+      >
+        <span><i class="fa-solid fa-download"></i></span>
+        <span class="dl-label">Download All</span>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════
+     HERO SECTION
+══════════════════════════════ -->
+<header class="hero" role="banner">
+
+  <!-- Floating decorative elements -->
+  <div class="hero-floaters" aria-hidden="true">
+    <span class="floater">🛍️</span>
+    <span class="floater">📱</span>
+    <span class="floater">🎯</span>
+    <span class="floater">💰</span>
+    <span class="floater">🚀</span>
+  </div>
+
+  <!-- Live badge -->
+  <div class="hero-badge">
+    <span class="dot"></span>
+    Resource Center · Always Updated
+  </div>
+
+  <!-- Main headline -->
+  <h1 class="hero-title">
+    ShopTab<br/>
+    <span class="gradient-text">Referral Hub</span>
+  </h1>
+
+  <p class="hero-sub">Download Marketing Resources Instantly</p>
+
+  <!-- Typing tagline -->
+  <p class="hero-tagline">
+    <span id="typing-text">Flyers, Videos, APKs &amp; More</span><span class="typing-cursor" aria-hidden="true"></span>
+  </p>
+
+  <!-- Stats -->
+  <div class="hero-stats" role="list" aria-label="Resource statistics">
+    <div class="stat-chip" role="listitem">
+      <span class="stat-number" id="stat-total">0</span>
+      <span class="stat-label">Resources</span>
+    </div>
+    <div class="stat-chip" role="listitem">
+      <span class="stat-number" id="stat-images">0</span>
+      <span class="stat-label">Images</span>
+    </div>
+    <div class="stat-chip" role="listitem">
+      <span class="stat-number" id="stat-videos">0</span>
+      <span class="stat-label">Videos</span>
+    </div>
+    <div class="stat-chip" role="listitem">
+      <span class="stat-number" id="stat-apks">0</span>
+      <span class="stat-label">Files</span>
+    </div>
+  </div>
+
+  <!-- CTAs -->
+  <div class="hero-ctas">
+    <button
+      id="btn-download-all-hero"
+      class="btn-primary"
+      aria-label="Download all resources"
+    >
+      <i class="fa-solid fa-download"></i> Download All Resources
+    </button>
+    <a href="#resources" class="btn-secondary">
+      <i class="fa-brands fa-sistrix"></i> Browse Resources
+    </a>
+  </div>
+
+</header>
+
+<!-- ══════════════════════════════
+     CONTROLS: SEARCH + FILTERS
+══════════════════════════════ -->
+<section
+  id="resources"
+  class="controls-section"
+  aria-label="Resource filters and search"
+>
+  <div class="controls-inner">
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <span class="search-icon" > <i class="fa-brands fa-sistrix"></i> </span>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search by name, type, or file..."
+        aria-label="Search resources"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button
+        id="search-clear"
+        class="search-clear"
+        aria-label="Clear search"
+        title="Clear"
+      >✕</button>
+    </div>
+
+    <!-- Filter Pills -->
+    <div class="filter-pills" role="group" aria-label="Filter by type">
+      <button class="pill active" data-filter="all" aria-pressed="true">
+        ✨ All <span class="pill-count">0</span>
+      </button>
+      <button class="pill" data-filter="images" aria-pressed="false">
+        🖼️ Images <span class="pill-count">0</span>
+      </button>
+      <button class="pill" data-filter="videos" aria-pressed="false">
+        🎬 Videos <span class="pill-count">0</span>
+      </button>
+      <button class="pill" data-filter="apks" aria-pressed="false">
+        📱 APKs <span class="pill-count">0</span>
+      </button>
+      <button class="pill" data-filter="documents" aria-pressed="false">
+        📄 Documents <span class="pill-count">0</span>
+      </button>
+    </div>
+
+    <!-- Results bar -->
+    <div class="results-bar">
+      <p class="results-count" id="results-text" aria-live="polite">
+        Loading resources…
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     RESOURCE GRID
+══════════════════════════════ -->
+<main class="grid-section" aria-label="Resource library">
+  <div
+    id="resource-grid"
+    role="list"
+    aria-label="Available resources"
+  >
+    <!-- Cards injected by JavaScript -->
+
+    <!-- Empty State -->
+    <div
+      id="empty-state"
+      role="status"
+      aria-label="No resources found"
+    >
+      <div class="empty-icon">🔍</div>
+      <h3 class="empty-title">No resources found</h3>
+      <p class="empty-sub">
+        Try adjusting your search or filter, or add files to the
+        <code>resources/</code> folder and update <code>manifest.json</code>.
+      </p>
+    </div>
+  </div>
+</main>
+
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo"> ShopTab Referral Hub</div>
+    <p class="footer-tagline">
+      Everything you need to grow your <strong>ShopTab</strong> Referral Earning.
+    </p>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════
+     DOWNLOAD ALL OVERLAY
+══════════════════════════════ -->
+<div
+  id="download-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Downloading all resources"
+>
+  <div class="download-modal">
+    <div class="download-modal-icon">⬇</div>
+    <h2 class="download-modal-title">Downloading Resources</h2>
+    <p class="download-modal-sub" id="dl-progress-text">Preparing downloads…</p>
+
+    <!-- Progress bar -->
+    <div class="dl-progress-bar-track">
+      <div class="dl-progress-bar-fill" id="dl-bar-fill"></div>
+    </div>
+
+    <!-- File list -->
+    <div class="dl-file-list" id="dl-file-list" aria-live="polite"></div>
+
+    <!-- Cancel -->
+    <button
+      id="btn-cancel-dl"
+      class="btn-cancel-dl"
+      aria-label="Cancel download"
+    >
+      ✕ Cancel
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     TOAST CONTAINER
+══════════════════════════════ -->
+<div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+
+<!-- ══════════════════════════════
+     SCRIPTS
+══════════════════════════════ -->
+<script src="assets/js/app.js"></script>
+
+<!-- PWA Service Worker Registration -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('[SW] Registered:', reg.scope))
+        .catch(err => console.warn('[SW] Failed:', err));
+    });
+  }
+</script>
+
+</body>
+</html>
