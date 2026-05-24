@@ -1,0 +1,79 @@
+{
+  "_readme": "Add your files to the folders, then list them here. This manifest powers the auto-detection system.",
+  "_instructions": "Format: { name, file, folder, size, date }. Size is optional - system will display it if provided.",
+  "images": [
+    {
+      "name": "ShopTab Logo",
+      "file": "logo.png",
+      "size": "245 KB",
+      "date": "2026-01-15"
+    },
+    {
+      "name": "Referral Flyer A4",
+      "file": "referral flyer A4.jpg",
+      "size": "512 KB",
+      "date": "2026-01-15"
+    },
+    {
+      "name": "Social Media Kit",
+      "file": "promo.jpg",
+      "size": "249 KB",
+      "date": "2026-01-20"
+    },
+    {
+      "name": "Social Refferal Flyer",
+      "file": "referral2.png",
+      "size": "189 KB",
+      "date": "2026-01-20"
+    },
+    {
+      "name": "Download Flyer",
+      "file": "installation.jpg",
+      "size": "142 KB",
+      "date": "2026-01-20"
+    },
+    {
+      "name": "Features Flyer",
+      "file": "features.jpg",
+      "size": "219 KB",
+      "date": "2026-01-20"
+    }
+  ],
+  "videos": [
+    {
+      "name": "intro To ShopTab",
+      "file": "intro.mp4",
+      "size": "15.4 KB",
+      "date": "2026-01-10"
+    },
+    {
+      "name": "Features Walkthrough",
+      "file": "features.mp4",
+      "size": "42.1 MB",
+      "date": "2026-01-12"
+    },
+    {
+      "name": "Promo Video",
+      "file": "promo.mp4",
+      "size": "42.1 MB",
+      "date": "2026-01-12"
+    }
+  ],
+  "apks": [
+    {
+      "name": "ShopTab App v1.0.1",
+      "file": "Shoptab.apk",
+      "size": "34.8 MB",
+      "date": "2026-01-18"
+    }
+  
+  ],
+  "documents": [
+    {
+      "name": "Referral Guide PDF",
+      "file": "referral-guide.pdf",
+      "size": "2.1 MB",
+      "date": "2026-01-14"
+    }
+  ]
+}
